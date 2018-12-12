@@ -27,7 +27,11 @@ At first, I attempted to implement Strassen in C, but then I had quite some trou
 
 At first, I also thought of allocating padding up to the next power of 2, yet that seemed very inefficient, because for 513 that meant going up to 1024, for 1025 going up to 2048, etc. I then decided to just go up one level, to the nearest even number, and keep dividing the matrix in 4 parts, until I reach an odd number for the dimension again. Because padding is at the bottom and the right, it wouldn’t affect the structure of the original matrix.
 
-To test the program I wrote a generate function in C++ to generate a .txt file with different matrices. I tested the algorithm with randomly generated matrices indexes from 1 to 10, with matrices comprised entirely of 1s, and matrices with consecutive numbers. To run the program just type make in the terminal, and then type ./strassen 0 dimension inputfile, where dimension is an integer, and inputfile is the file containing the matrices.
+To test the program I wrote a generate function in C++ to generate a .txt file with different matrices. I tested the algorithm with randomly generated matrices indexes from 1 to 10, with matrices comprised entirely of 1s, and matrices with consecutive numbers. To run the program just type make in the terminal, and then type 
+```
+./strassen 0 dimension inputfile
+```
+where dimension is an integer, and inputfile is the file containing the matrices.
 
 ## Results
 On my machine the best performance seemed to happen at the crossover point cp = 86 for all matrix types. On the table below, we can see the performance for the 1s matrix for different values of the dimension for the Strassen and the conventional matrix multiplications.
