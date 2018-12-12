@@ -23,9 +23,7 @@ This gives us n_0 approx 37, or cp approx 37. Thus, above n = 37, we would alway
 
 ## Implementation in C++
 
-At first, I attempted to implement Strassen in C, but then I had quite some trouble with memory allocation and pointer arithmetic, and then I couldn’t figure out how to make the implementation with a dynamic padding in a static C array, so I decided to implement the algorithm in C++ using vectors and passing them by reference. This saved me a lot of pointer headaches, and allowed for dynamic resizing of the vectors.
-
-At first, I also thought of allocating padding up to the next power of 2, yet that seemed very inefficient, because for 513 that meant going up to 1024, for 1025 going up to 2048, etc. I then decided to just go up one level, to the nearest even number, and keep dividing the matrix in 4 parts, until I reach an odd number for the dimension again. Because padding is at the bottom and the right, it wouldn’t affect the structure of the original matrix.
+At first, I thought of allocating padding up to the next power of 2, yet that seemed very inefficient, because for 513 that meant going up to 1024, for 1025 going up to 2048, etc. I then decided to just go up one level, to the nearest even number, and keep dividing the matrix in 4 parts, until I reach an odd number for the dimension again. Because padding is at the bottom and the right, it wouldn’t affect the structure of the original matrix.
 
 To test the program I wrote a generate function in C++ to generate a .txt file with different matrices. I tested the algorithm with randomly generated matrices indexes from 1 to 10, with matrices comprised entirely of 1s, and matrices with consecutive numbers. To run the program just type make in the terminal, and then type 
 ```
