@@ -1,4 +1,5 @@
 # Strassen Matrix Multiplication Implementation
+Implementation from March 2017. Rangel Milushev.
 
 ## Finding the theoretical crossover point
 
